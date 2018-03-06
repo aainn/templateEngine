@@ -1,0 +1,19 @@
+{
+  "name": "PugTemplateEngine",
+  "version": "1.0.0",
+  "description": "copy bootstrap checkout example html to local project intialize npm: npm init -y install bootstrap, popper, jquery per npm: ` bootstrap popper.js jquery --save` create a .gitignore and ignore node_modules commit install webpack & transpile the entry file with boottrap.js to one budle.js include ONLY bundle.js in before </body> include bootstrap.min.css from node_modules path in the html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10"
+  }
+}
