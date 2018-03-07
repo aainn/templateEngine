@@ -11335,193 +11335,105 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Products = function (_React$Component) {
-    _inherits(Products, _React$Component);
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-    function Products() {
-        _classCallCheck(this, Products);
+    function App(props) {
+        _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (Products.__proto__ || Object.getPrototypeOf(Products)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+        _this.state = JSON.parse(localStorage.getItem('react-cart')) || {
+            data: [{
+                "id": 0,
+                "name": "JavaScript: The Definitive Guide, 6th Edition",
+                "release": "September 2010",
+                "amount": 1,
+                "price": "2.99"
+            }, {
+                "id": 1,
+                "name": "Ruby on Rails: Up and Running",
+                "release": "March 2007",
+                "amount": 1,
+                "price": "30.99"
+            }]
+        };
+        return _this;
     }
 
-    _createClass(Products, [{
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return this.state.data.map(function (person, i) {
+                return _react2.default.createElement(Product, { key: i, data: person });
+            });
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+
+var Product = function (_React$Component2) {
+    _inherits(Product, _React$Component2);
+
+    function Product() {
+        _classCallCheck(this, Product);
+
+        return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
+    }
+
+    _createClass(Product, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
-                null,
+                'li',
+                { className: 'list-group-item d-flex justify-content-between lh-condensed' },
                 _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item d-flex jstify-content-between lh-condensed' },
+                    'div',
+                    null,
                     _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                            'h6',
-                            { className: 'my-0' },
-                            ' Product 1'
-                        ),
-                        _react2.default.createElement(
-                            'small',
-                            { className: 'text-muted' },
-                            ' 1.000\u20AC '
-                        )
+                        'h6',
+                        { className: 'my-0' },
+                        this.props.data.name
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'd-flex flex-column' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'text-muted d-flex justify-conent-center align-items-baseline' },
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '-'
-                            ),
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '+'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'badge' },
-                            ' something '
-                        )
+                        'small',
+                        { className: 'text-muted' },
+                        'Release: ',
+                        this.props.data.release
                     )
                 ),
                 _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item d-flex jstify-content-between lh-condensed' },
+                    'div',
+                    { className: 'd-flex flex-column' },
                     _react2.default.createElement(
-                        'div',
-                        null,
+                        'span',
+                        { className: 'text-muted d-flex justify-content-center align-items-baseline' },
                         _react2.default.createElement(
-                            'h6',
-                            { className: 'my-0' },
-                            ' Product 2'
+                            'button',
+                            { className: 'btn btn-sm btn-light' },
+                            '-'
                         ),
                         _react2.default.createElement(
-                            'small',
-                            { className: 'text-muted' },
-                            ' 2.000\u20AC '
+                            'button',
+                            { className: 'btn btn-sm btn-light' },
+                            '+'
                         )
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'd-flex flex-column' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'text-muted d-flex justify-conent-center align-items-baseline' },
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '-'
-                            ),
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '+'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'badge' },
-                            ' something else'
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item d-flex jstify-content-between lh-condensed' },
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                            'h6',
-                            { className: 'my-0' },
-                            ' Product 3'
-                        ),
-                        _react2.default.createElement(
-                            'small',
-                            { className: 'text-muted' },
-                            ' 3.000\u20AC '
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'd-flex flex-column' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'text-muted d-flex justify-conent-center align-items-baseline' },
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '-'
-                            ),
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '+'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'badge' },
-                            ' some more '
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item d-flex jstify-content-between lh-condensed' },
-                    _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                            'h6',
-                            { className: 'my-0' },
-                            ' Product 4'
-                        ),
-                        _react2.default.createElement(
-                            'small',
-                            { className: 'text-muted' },
-                            ' 4.000\u20AC '
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'd-flex flex-column' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'text-muted d-flex justify-conent-center align-items-baseline' },
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '-'
-                            ),
-                            _react2.default.createElement(
-                                'button',
-                                { className: 'btn btn-sm btn-light' },
-                                '+'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'badge' },
-                            ' whatever '
-                        )
+                        'span',
+                        { className: 'badge' },
+                        this.props.data.amount
                     )
                 )
             );
         }
     }]);
 
-    return Products;
+    return Product;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(Products, null), document.getElementById('root'));
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ }),
 /* 16 */
