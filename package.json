@@ -4,16 +4,23 @@
   "description": "copy bootstrap checkout example html to local project intialize npm: npm init -y install bootstrap, popper, jquery per npm: ` bootstrap popper.js jquery --save` create a .gitignore and ignore node_modules commit install webpack & transpile the entry file with boottrap.js to one budle.js include ONLY bundle.js in before </body> include bootstrap.min.css from node_modules path in the html",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/webpack",
+    "watch": "./node_modules/.bin/webpack --watch",
+    "clean": "rm -rf ./dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "html-webpack-plugin": "^3.0.4",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
-    "webpack": "^4.1.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
     "webpack-cli": "^2.0.10"
   }
 }
