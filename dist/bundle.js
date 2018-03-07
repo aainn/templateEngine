@@ -11327,6 +11327,10 @@ var _reactDom = __webpack_require__(22);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Product = __webpack_require__(31);
+
+var _Product2 = _interopRequireDefault(_Product);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11346,16 +11350,28 @@ var App = function (_React$Component) {
         _this.state = JSON.parse(localStorage.getItem('react-cart')) || {
             data: [{
                 "id": 0,
-                "name": "JavaScript: The Definitive Guide, 6th Edition",
+                "name": "Comté - The Definitive Guide, 6th Edition",
                 "release": "September 2010",
                 "amount": 1,
                 "price": "2.99"
             }, {
                 "id": 1,
-                "name": "Ruby on Rails: Up and Running",
+                "name": "Limburger Cookbook",
+                "release": "September 1991",
+                "amount": 1,
+                "price": "0.99"
+            }, {
+                "id": 2,
+                "name": "BabyBell: Up and Running",
                 "release": "March 2007",
                 "amount": 1,
                 "price": "30.99"
+            }, {
+                "id": 3,
+                "name": "Roquefort pour les Connaisseurs",
+                "release": "August 1910",
+                "amount": 1,
+                "price": "300.00"
             }]
         };
         return _this;
@@ -11365,72 +11381,12 @@ var App = function (_React$Component) {
         key: 'render',
         value: function render() {
             return this.state.data.map(function (person, i) {
-                return _react2.default.createElement(Product, { key: i, data: person });
+                return _react2.default.createElement(_Product2.default, { key: i, data: person });
             });
         }
     }]);
 
     return App;
-}(_react2.default.Component);
-
-var Product = function (_React$Component2) {
-    _inherits(Product, _React$Component2);
-
-    function Product() {
-        _classCallCheck(this, Product);
-
-        return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
-    }
-
-    _createClass(Product, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'li',
-                { className: 'list-group-item d-flex justify-content-between lh-condensed' },
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'h6',
-                        { className: 'my-0' },
-                        this.props.data.name
-                    ),
-                    _react2.default.createElement(
-                        'small',
-                        { className: 'text-muted' },
-                        'Release: ',
-                        this.props.data.release
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'd-flex flex-column' },
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'text-muted d-flex justify-content-center align-items-baseline' },
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'btn btn-sm btn-light' },
-                            '-'
-                        ),
-                        _react2.default.createElement(
-                            'button',
-                            { className: 'btn btn-sm btn-light' },
-                            '+'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'badge' },
-                        this.props.data.amount
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Product;
 }(_react2.default.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
@@ -35115,6 +35071,93 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Product = function (_React$Component) {
+  _inherits(Product, _React$Component);
+
+  function Product() {
+    _classCallCheck(this, Product);
+
+    return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
+  }
+
+  _createClass(Product, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "li",
+        { className: "list-group-item d-flex justify-content-between lh-condensed" },
+        _react2.default.createElement(
+          "div",
+          null,
+          _react2.default.createElement(
+            "h6",
+            { className: "my-0" },
+            this.props.data.name
+          ),
+          _react2.default.createElement(
+            "small",
+            { className: "text-muted" },
+            "Release: ",
+            this.props.data.release
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "d-flex flex-column" },
+          _react2.default.createElement(
+            "span",
+            { className: "text-muted d-flex justify-content-center align-items-baseline" },
+            _react2.default.createElement(
+              "button",
+              { className: "btn btn-sm btn-light" },
+              "-"
+            ),
+            _react2.default.createElement(
+              "button",
+              { className: "btn btn-sm btn-light" },
+              "+"
+            )
+          ),
+          _react2.default.createElement(
+            "span",
+            { className: "badge" },
+            this.props.data.amount
+          )
+        )
+      );
+    }
+  }]);
+
+  return Product;
+}(_react2.default.Component);
+
+exports.default = Product;
 
 /***/ })
 /******/ ]);
