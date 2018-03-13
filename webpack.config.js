@@ -22,7 +22,7 @@ var config = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Pug Template',
-      desc: 'A very long descriptions with test and bla',
+      desc: 'dunno',
       posts: [{title: "1 bla bla"}, {title: "2 bla bla"}, {title: "3 bla bla"}, {title: "4 bla bla"}],
       template: '!!pug-loader!src/index.pug',
     }),

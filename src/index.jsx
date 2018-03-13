@@ -3,6 +3,8 @@ import $ from 'jquery';
 
 import React from 'react';
 import ReactDom from 'react-dom';
+import Address from './Address.jsx';
+import Header from './Header.jsx';
 import Product from './Product.jsx';
 
 class App extends React.Component {
@@ -44,7 +46,11 @@ class App extends React.Component {
     }
     render(){
         return(
-            this.state.data.map((person, i) => <Product key={i} data = {person} />)
+            <div>
+            <Header/>
+            <Address/>
+            {this.state.data.map((person, i) => <Product key={i} data = {person} />)}
+            </div>
         );
     }
 }
